@@ -11,6 +11,7 @@ public class MailClient
     private MailServer server;
     // The user running this client.
     private String user;
+    private String subjet;
 
     /**
      * Create a mail client run by user and attached to the given server.
@@ -19,6 +20,14 @@ public class MailClient
     {
         this.server = server;
         this.user = user;
+        
+    }
+    public void mostrarInformaciondelCliente(MailServer server1, String user1){
+        System.out.println(server.howManyMailItems(user));
+    
+    
+    
+    
     }
 
     /**
@@ -50,9 +59,9 @@ public class MailClient
      * @param to The intended recipient.
      * @param message The text of the message to be sent.
      */
-    public void sendMailItem(String to, String message)
+    public void sendMailItem(String to, String message, String subjet)
     {
-        MailItem item = new MailItem(user, to, message);
+        MailItem item = new MailItem(user, to, message, subjet);
         server.post(item);
     }
 }

@@ -13,6 +13,7 @@ public class MailItem
     private String to;
     // The text of the message.
     private String message;
+    private String subjet;
 
     /**
      * Create a mail item from sender to the given recipient,
@@ -21,11 +22,12 @@ public class MailItem
      * @param to The intended recipient of this item.
      * @param message The text of the message to be sent.
      */
-    public MailItem(String from, String to, String message)
+    public MailItem(String from, String to, String subjet, String message)
     {
         this.from = from;
         this.to = to;
         this.message = message;
+        this.subjet = subjet;
     }
 
     /**
@@ -52,6 +54,11 @@ public class MailItem
         return message;
     }
 
+    public String getSubjet()
+    {
+        return subjet;
+    }
+
     /**
      * Print this mail message to the text terminal.
      */
@@ -59,6 +66,8 @@ public class MailItem
     {
         System.out.println("From: " + from);
         System.out.println("To: " + to);
+        System.out.println("Subjet: " + subjet);
         System.out.println("Message: " + message);
+        
     }
 }
